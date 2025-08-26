@@ -45,4 +45,20 @@ public class BiscuitManager : MonoBehaviour
         }
         return false;
     }
+
+    public void SetCurrentBiscuit(int i)
+    {
+        if (biscuits[i].unlocked)
+        {
+            currentBiscuit = biscuits[i];
+        }
+    }
+
+    public void SetCurrentDrink(int i)
+    {
+        if (drinks[i].unlocked)
+        {
+            currentDrink = drinks[i];
+        }
+    }
 }
