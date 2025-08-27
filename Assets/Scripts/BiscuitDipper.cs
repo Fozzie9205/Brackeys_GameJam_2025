@@ -16,6 +16,7 @@ public class BiscuitDipper : MonoBehaviour
     private float holdTime;
     private float pointsThisDip;
 
+    [Header("Integrity")]
     public float baseIntegrity = 10f; //This is the base integrity of all biscuits
     private float currentIntegrity;
 
@@ -23,13 +24,27 @@ public class BiscuitDipper : MonoBehaviour
 
     public float baseRate; //This is the base points per second
 
+    [Header("Biscuit Movement")]
+    public Transform biscuit;
+    public float dipDepth = -0.5f;
+    public float dipSpeed = 5f;
+
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
+
     private void Awake()
     {
         bm = FindFirstObjectByType<BiscuitManager>();
         dm = FindFirstObjectByType<DrinkManager>();
         scoreManager = FindFirstObjectByType<ScoreManager>();
-    }
 
+        biscuit = gameObject.transform;
+    }
+    void Start()
+    {
+        startPosition = biscuit.localPosition;
+        targetPosition = startPosition;
+    }
     void Update()
     {
         currentBiscuit = bm.currentBiscuit;
@@ -41,6 +56,9 @@ public class BiscuitDipper : MonoBehaviour
             holdTime = 0f;
             pointsThisDip = 0f;
             currentIntegrity = baseIntegrity * currentBiscuit.integrityMultiplier;
+
+            //Start moving biscuit down
+            targetPosition = startPosition + new Vector3(0f, dipDepth, 0f);
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
@@ -53,6 +71,8 @@ public class BiscuitDipper : MonoBehaviour
         {
             DipBiscuit();
         }
+
+        biscuit.localPosition = Vector3.Lerp(biscuit.localPosition, targetPosition, dipSpeed * Time.deltaTime);
 
         Debug.Log(currentIntegrity);
     }
@@ -95,5 +115,6 @@ public class BiscuitDipper : MonoBehaviour
         pointsThisDip = 0;
         currentIntegrity = baseIntegrity * currentBiscuit.integrityMultiplier;
 
+        targetPosition = startPosition;
     }
 }
