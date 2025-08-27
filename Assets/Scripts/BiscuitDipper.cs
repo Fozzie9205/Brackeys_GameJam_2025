@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class BiscuitDipper : MonoBehaviour
 {
-    public BiscuitManager bm;
+    private BiscuitManager bm;
     public Biscuit currentBiscuit;
     public Drink currentDrink;
 

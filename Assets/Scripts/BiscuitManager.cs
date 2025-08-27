@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BiscuitManager : MonoBehaviour
 {
+    private BiscuitUIManager biscuitUIManager;
+
     public Biscuit[] biscuits;
     public Drink[] drinks;
 
@@ -14,10 +16,17 @@ public class BiscuitManager : MonoBehaviour
 
     void Start()
     {
+        if (biscuitUIManager == null)
+        {
+            biscuitUIManager = FindFirstObjectByType<BiscuitUIManager>();
+        }
+
         biscuits[0].unlocked = true;
         drinks[0].unlocked = true;
         currentBiscuit = biscuits[0];
         currentDrink = drinks[0];
+
+        biscuitUIManager.RefreshButtons();
     }
 
     public bool UnlockBiscuit(int i)
@@ -25,22 +34,19 @@ public class BiscuitManager : MonoBehaviour
         //Call function when we want the player to unlock a biscuit
         Biscuit b = biscuits[i];
 
-        if (b.unlocked)
-        {
-            SetCurrentBiscuit(i);
-            return false;
-        }
-
         if (crumbs >= b.price)
         {
             crumbs -= b.price;
             b.unlocked = true;
             currentBiscuit = b;
+        }
 
-            Debug.Log("Unlocked: " + b.name);
-            Debug.Log("Current Biscuit: " + currentBiscuit.name);
+        if (b.unlocked)
+        {
+            SetCurrentBiscuit(i);
             return true;
         }
+
         Debug.Log("You don't have enough crumbs");
         return false;
     }
@@ -67,6 +73,8 @@ public class BiscuitManager : MonoBehaviour
             currentBiscuit = biscuits[i];
             Debug.Log("Selected: " + currentBiscuit.name);
         }
+
+        biscuitUIManager.RefreshButtons();
     }
 
     public void SetCurrentDrink(int i)

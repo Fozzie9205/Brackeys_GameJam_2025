@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class BiscuitButtons : MonoBehaviour
 {
-    public BiscuitManager bm;
+    private BiscuitManager bm;
     void Start()
     {
         if (bm == null)
