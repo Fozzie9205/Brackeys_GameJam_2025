@@ -22,6 +22,7 @@ public class BiscuitManager : MonoBehaviour
 
     public bool UnlockBiscuit(int i)
     {
+        //Call function when we want the player to unlock a biscuit
         Biscuit b = biscuits[i];
         if (!b.unlocked && crumbs >= b.price)
         {
@@ -35,6 +36,7 @@ public class BiscuitManager : MonoBehaviour
 
     public bool UnlockDrink(int i)
     {
+        //Call function when we want the player to unlock a drink
         Drink d = drinks[i];
         if (!d.unlocked && crumbs >= d.price)
         {
@@ -48,6 +50,7 @@ public class BiscuitManager : MonoBehaviour
 
     public void SetCurrentBiscuit(int i)
     {
+        //Call function when player selects a biscuit
         if (biscuits[i].unlocked)
         {
             currentBiscuit = biscuits[i];
@@ -56,6 +59,7 @@ public class BiscuitManager : MonoBehaviour
 
     public void SetCurrentDrink(int i)
     {
+        //Call function whe player selects a drink
         if (drinks[i].unlocked)
         {
             currentDrink = drinks[i];

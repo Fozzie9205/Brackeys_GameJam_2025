@@ -13,15 +13,20 @@ public class BiscuitDipper : MonoBehaviour
     private float holdTime;
     private float pointsThisDip;
 
-    private float baseIntegrity = 10f;
+    private float baseIntegrity = 10f; //This is the base integrity of all biscuits
     private float currentIntegrity;
 
     private bool isDipping = false;
 
-    public float baseRate;
+    public float baseRate; //This is the base points per second
 
     void Start()
     {
+        if (bm == null)
+        {
+            bm = FindFirstObjectByType<BiscuitManager>();
+        }
+
         currentBiscuit = bm.currentBiscuit;
         currentDrink = bm.currentDrink;
 
@@ -60,13 +65,15 @@ public class BiscuitDipper : MonoBehaviour
         float biscuitScoreMult = currentBiscuit.scoreMultiplier;
         float drinkScoreMult = currentDrink.scoreMultiplier;
 
+        //Calculate score
         pointsThisDip += baseRate * biscuitScoreMult * drinkScoreMult * Time.deltaTime;
 
         float biscuitIntegrityMult = currentBiscuit.integrityMultiplier;
         float drinkSogginess = currentDrink.sogginess;
 
+        //Integrity is lost over time
         currentIntegrity -= drinkSogginess * Time.deltaTime;
-        
+
         if (currentIntegrity <= 0)
         {
             Debug.Log("Biscuit broke");
@@ -76,12 +83,14 @@ public class BiscuitDipper : MonoBehaviour
 
     public void EndDip()
     {
+        //Add points earned to crumbs counter
         bm.crumbs += Mathf.RoundToInt(pointsThisDip);
         Refresh();
     }
 
     public void Refresh()
     {
+        //Reset values
         isDipping = false;
         holdTime = 0f;
         pointsThisDip = 0;
