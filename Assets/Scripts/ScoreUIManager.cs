@@ -18,6 +18,6 @@ public class ScoreUIManager : MonoBehaviour
 
     void Update()
     {
-        crumbsText.text = "Crumbs: " + scoreManager.crumbs;
+        crumbsText.text = "" + scoreManager.crumbs;
     }
 }
