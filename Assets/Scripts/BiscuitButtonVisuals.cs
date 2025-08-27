@@ -12,7 +12,7 @@ public class BiscuitButtonVisuals : MonoBehaviour
     public Color unlockedColour = Color.white;
     public Color selectedColour = Color.green;
 
-    public void Start()
+    void Awake()
     {
         button = GetComponent<Button>();
     }
