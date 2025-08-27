@@ -2130,9 +2130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   biscuitSprites:
   - {fileID: 4689240166119133576, guid: c71ac049233bd144ea16114b5e5f0c1d, type: 3}
-  - {fileID: 0}
+  - {fileID: 4689240166119133576, guid: e5a5f9d1f2c51034f98f9c5f22f07aa7, type: 3}
   - {fileID: -2053989363645956680, guid: ad7e71cac167928428ebe29b6fc6c835, type: 3}
-  - {fileID: 0}
+  - {fileID: -2053989363645956680, guid: f05605dce2587524783bcbcff68a9ffe, type: 3}
   biscuitSprite: {fileID: 1787590547}
 --- !u!4 &1557091251
 Transform:
