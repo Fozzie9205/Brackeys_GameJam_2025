@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 public class BiscuitDipper : MonoBehaviour
 {
     public BiscuitManager bm;
-    private Biscuit currentBiscuit;
-    private Drink currentDrink;
+    public Biscuit currentBiscuit;
+    public Drink currentDrink;
 
     private float holdTime;
     private float pointsThisDip;
@@ -26,16 +26,13 @@ public class BiscuitDipper : MonoBehaviour
         {
             bm = FindFirstObjectByType<BiscuitManager>();
         }
-
-        currentBiscuit = bm.currentBiscuit;
-        currentDrink = bm.currentDrink;
-
-        Debug.Log("Current biscuit " + currentBiscuit.name);
-        Debug.Log("Current drink " + currentDrink.name);
     }
 
     void Update()
     {
+        currentBiscuit = bm.currentBiscuit;
+        currentDrink = bm.currentDrink;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isDipping = true;
@@ -54,8 +51,6 @@ public class BiscuitDipper : MonoBehaviour
         {
             DipBiscuit();
         }
-
-        Debug.Log(currentIntegrity);
     }
 
     public void DipBiscuit()

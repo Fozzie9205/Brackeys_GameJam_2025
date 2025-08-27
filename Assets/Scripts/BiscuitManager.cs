@@ -24,13 +24,24 @@ public class BiscuitManager : MonoBehaviour
     {
         //Call function when we want the player to unlock a biscuit
         Biscuit b = biscuits[i];
-        if (!b.unlocked && crumbs >= b.price)
+
+        if (b.unlocked)
+        {
+            SetCurrentBiscuit(i);
+            return false;
+        }
+
+        if (crumbs >= b.price)
         {
             crumbs -= b.price;
             b.unlocked = true;
             currentBiscuit = b;
+
+            Debug.Log("Unlocked: " + b.name);
+            Debug.Log("Current Biscuit: " + currentBiscuit.name);
             return true;
         }
+        Debug.Log("You don't have enough crumbs");
         return false;
     }
 
@@ -54,6 +65,7 @@ public class BiscuitManager : MonoBehaviour
         if (biscuits[i].unlocked)
         {
             currentBiscuit = biscuits[i];
+            Debug.Log("Selected: " + currentBiscuit.name);
         }
     }
 
