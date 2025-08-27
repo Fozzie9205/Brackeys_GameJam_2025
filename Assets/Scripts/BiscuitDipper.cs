@@ -25,20 +25,9 @@ public class BiscuitDipper : MonoBehaviour
 
     private void Awake()
     {
-        if (bm == null)
-        {
-            bm = FindFirstObjectByType<BiscuitManager>();
-        }
-
-        if (dm == null)
-        {
-            dm = FindFirstObjectByType<DrinkManager>();
-        }
-
-        if (scoreManager == null)
-        {
-            scoreManager = FindFirstObjectByType<ScoreManager>();
-        }
+        bm = FindFirstObjectByType<BiscuitManager>();
+        dm = FindFirstObjectByType<DrinkManager>();
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     void Update()

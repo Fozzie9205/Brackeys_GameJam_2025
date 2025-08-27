@@ -1447,6 +1447,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528530780}
   m_CullTransparentMesh: 1
+--- !u!1 &1557091249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1557091251}
+  - component: {fileID: 1557091250}
+  m_Layer: 0
+  m_Name: BiscuitSpriteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1557091250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557091249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548618dd5d0949f49bbd0e4e62f24672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biscuitSprites:
+  - {fileID: 4689240166119133576, guid: c71ac049233bd144ea16114b5e5f0c1d, type: 3}
+  - {fileID: 0}
+  - {fileID: -2053989363645956680, guid: ad7e71cac167928428ebe29b6fc6c835, type: 3}
+  - {fileID: 0}
+  biscuitSprite: {fileID: 1787590547}
+--- !u!4 &1557091251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557091249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8293649, y: 0.36825466, z: -0.03736042}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707288621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,8 +2084,9 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1073093005}
   - {fileID: 286758092}
-  - {fileID: 1787590548}
   - {fileID: 2103794019}
   - {fileID: 1219926744}
   - {fileID: 1781524391}
   - {fileID: 768851034}
+  - {fileID: 1787590548}
+  - {fileID: 1557091251}

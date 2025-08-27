@@ -6,21 +6,16 @@ public class BiscuitManager : MonoBehaviour
 {
     private ScoreManager scoreManager;
     private BiscuitUIManager biscuitUIManager;
+    private BiscuitSpriteManager spriteManager;
 
     public Biscuit[] biscuits;
     public Biscuit currentBiscuit;
 
     private void Awake()
     {
-        if (biscuitUIManager == null)
-        {
-            biscuitUIManager = FindFirstObjectByType<BiscuitUIManager>();
-        }
-
-        if (scoreManager == null)
-        {
-            scoreManager = FindFirstObjectByType<ScoreManager>();
-        }
+        scoreManager = FindFirstObjectByType<ScoreManager>();
+        biscuitUIManager = FindFirstObjectByType<BiscuitUIManager>();
+        spriteManager = FindFirstObjectByType<BiscuitSpriteManager>();
     }
     void Start()
     {
@@ -62,5 +57,6 @@ public class BiscuitManager : MonoBehaviour
         }
 
         biscuitUIManager.RefreshButtons();
+        spriteManager.UpdateBiscuitSprite();
     }
 }
