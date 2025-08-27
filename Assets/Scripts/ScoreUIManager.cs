@@ -5,18 +5,19 @@ using TMPro;
 
 public class ScoreUIManager : MonoBehaviour
 {
-    public BiscuitManager bm;
+    private ScoreManager scoreManager;
+
     public TMP_Text crumbsText;
-    void Start()
+    private void Awake()
     {
-        if (bm == null)
+        if (scoreManager == null)
         {
-            bm = FindFirstObjectByType<BiscuitManager>();
+            scoreManager = FindFirstObjectByType<ScoreManager>();
         }
     }
 
     void Update()
     {
-        crumbsText.text = "Crumbs: " + bm.crumbs;
+        crumbsText.text = "Crumbs: " + scoreManager.crumbs;
     }
 }

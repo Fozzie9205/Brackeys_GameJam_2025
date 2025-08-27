@@ -6,7 +6,7 @@ public class BiscuitUIManager : MonoBehaviour
 {
     private BiscuitManager bm;
     public BiscuitButtonVisuals[] buttonVisuals;
-    void Start()
+    void Awake()
     {
         if (bm == null)
         {

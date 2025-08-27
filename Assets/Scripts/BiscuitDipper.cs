@@ -6,32 +6,45 @@ using UnityEngine.UIElements;
 
 public class BiscuitDipper : MonoBehaviour
 {
+    private ScoreManager scoreManager;
     private BiscuitManager bm;
+    private DrinkManager dm;
+
     public Biscuit currentBiscuit;
     public Drink currentDrink;
 
     private float holdTime;
     private float pointsThisDip;
 
-    private float baseIntegrity = 10f; //This is the base integrity of all biscuits
+    public float baseIntegrity = 10f; //This is the base integrity of all biscuits
     private float currentIntegrity;
 
     private bool isDipping = false;
 
     public float baseRate; //This is the base points per second
 
-    void Start()
+    private void Awake()
     {
         if (bm == null)
         {
             bm = FindFirstObjectByType<BiscuitManager>();
+        }
+
+        if (dm == null)
+        {
+            dm = FindFirstObjectByType<DrinkManager>();
+        }
+
+        if (scoreManager == null)
+        {
+            scoreManager = FindFirstObjectByType<ScoreManager>();
         }
     }
 
     void Update()
     {
         currentBiscuit = bm.currentBiscuit;
-        currentDrink = bm.currentDrink;
+        currentDrink = dm.currentDrink;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -51,6 +64,8 @@ public class BiscuitDipper : MonoBehaviour
         {
             DipBiscuit();
         }
+
+        Debug.Log(currentIntegrity);
     }
 
     public void DipBiscuit()
@@ -79,7 +94,7 @@ public class BiscuitDipper : MonoBehaviour
     public void EndDip()
     {
         //Add points earned to crumbs counter
-        bm.crumbs += Mathf.RoundToInt(pointsThisDip);
+        scoreManager.crumbs += Mathf.RoundToInt(pointsThisDip);
         Refresh();
     }
 
