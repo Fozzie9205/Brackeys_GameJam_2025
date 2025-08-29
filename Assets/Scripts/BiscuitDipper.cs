@@ -50,7 +50,7 @@ public class BiscuitDipper : MonoBehaviour
         currentBiscuit = bm.currentBiscuit;
         currentDrink = dm.currentDrink;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
             isDipping = true;
             holdTime = 0f;
@@ -61,7 +61,7 @@ public class BiscuitDipper : MonoBehaviour
             targetPosition = startPosition + new Vector3(0f, dipDepth, 0f);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetMouseButtonUp(0))
         {
             isDipping = false;
             EndDip();
