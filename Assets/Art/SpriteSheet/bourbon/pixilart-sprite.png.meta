@@ -115,10 +115,10 @@ TextureImporter:
       name: pixilart-sprite_0
       rect:
         serializedVersion: 2
-        x: 290
-        y: 180
-        width: 260
-        height: 590
+        x: 0
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,10 +136,10 @@ TextureImporter:
       name: pixilart-sprite_1
       rect:
         serializedVersion: 2
-        x: 1290
-        y: 180
-        width: 260
-        height: 590
+        x: 1000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,10 +157,10 @@ TextureImporter:
       name: pixilart-sprite_2
       rect:
         serializedVersion: 2
-        x: 2290
-        y: 180
-        width: 260
-        height: 590
+        x: 2000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: pixilart-sprite_3
       rect:
         serializedVersion: 2
-        x: 3290
-        y: 480
-        width: 260
-        height: 290
+        x: 3000
+        y: 0
+        width: 1000
+        height: 1000
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,27 +191,6 @@ TextureImporter:
       bones: []
       spriteID: 7318026797836e900800000000000000
       internalID: 713319685308842295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite_4
-      rect:
-        serializedVersion: 2
-        x: 3240
-        y: 130
-        width: 330
-        height: 330
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0a29c2fd4547c980800000000000000
-      internalID: -8518763969059935731
       vertices: []
       indices: 
       edges: []
@@ -231,7 +210,6 @@ TextureImporter:
       pixilart-sprite_1: 4521018998857404175
       pixilart-sprite_2: -4621546931983276131
       pixilart-sprite_3: 713319685308842295
-      pixilart-sprite_4: -8518763969059935731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
