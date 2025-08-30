@@ -8,10 +8,7 @@ public class BiscuitUIManager : MonoBehaviour
     public BiscuitButtonVisuals[] buttonVisuals;
     void Awake()
     {
-        if (bm == null)
-        {
-            bm = FindFirstObjectByType<BiscuitManager>();
-        }
+        bm = FindFirstObjectByType<BiscuitManager>();
     }
 
     public void RefreshButtons()

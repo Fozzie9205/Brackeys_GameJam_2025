@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BiscuitButtons : MonoBehaviour
+public class DrinkButtons : MonoBehaviour
 {
-    private BiscuitManager bm;
+    private DrinkManager dm;
 
     private void Awake()
     {
-        bm = FindFirstObjectByType<BiscuitManager>();
+        dm = FindFirstObjectByType<DrinkManager>();
     }
     void Start()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            int biscuitIndex = i;
+            int drinkIndex = i;
             Button btn = transform.GetChild(i).GetComponent<Button>();
-            btn.onClick.AddListener(() => bm.UnlockBiscuit(biscuitIndex));
+            btn.onClick.AddListener(() => dm.UnlockDrink(drinkIndex));
         }
     }
 }
