@@ -9,12 +9,15 @@ public class BiscuitDipper : MonoBehaviour
     private ScoreManager scoreManager;
     private BiscuitManager bm;
     private DrinkManager dm;
+    private Win win;
 
     public Biscuit currentBiscuit;
     public Drink currentDrink;
 
     private float holdTime;
     private float pointsThisDip;
+
+    private BiscuitAnimationHandler biscuitAnimHandler;
 
     [Header("Integrity")]
     public float baseIntegrity = 10f; //This is the base integrity of all biscuits
