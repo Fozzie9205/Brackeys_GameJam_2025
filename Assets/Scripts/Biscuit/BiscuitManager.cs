@@ -30,7 +30,7 @@ public class BiscuitManager : MonoBehaviour
         //Call function when we want the player to unlock a biscuit
         Biscuit b = biscuits[i];
 
-        if (scoreManager.crumbs >= b.price)
+        if (!b.unlocked && scoreManager.crumbs >= b.price)
         {
             scoreManager.crumbs -= b.price;
             b.unlocked = true;

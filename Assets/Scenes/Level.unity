@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0e4e5c56e9617429abcb206f107c42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winScore: 10
+  winScore: 1000
   crumbs: 0
 --- !u!4 &768851034
 Transform:
