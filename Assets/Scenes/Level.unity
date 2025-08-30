@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 500
+  m_text: 400
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2667,7 +2667,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '150
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5225,7 +5227,7 @@ MonoBehaviour:
   - name: Bourbon
     scoreMultiplier: 1.25
     integrityMultiplier: 0.95
-    price: 100
+    price: 150
     unlocked: 0
   - name: Custard Cream
     scoreMultiplier: 1.4
@@ -5235,7 +5237,7 @@ MonoBehaviour:
   - name: Viennese Swirl
     scoreMultiplier: 1.6
     integrityMultiplier: 0.8
-    price: 500
+    price: 400
     unlocked: 0
   currentBiscuit:
     name: 
