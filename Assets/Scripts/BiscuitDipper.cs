@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -17,6 +18,8 @@ public class BiscuitDipper : MonoBehaviour
 
     private float holdTime;
     private float pointsThisDip;
+
+    public TMP_Text instructionText;
 
     [Header("Integrity")]
     public float baseIntegrity = 10f; //This is the base integrity of all biscuits
@@ -70,6 +73,8 @@ public class BiscuitDipper : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
+            instructionText.gameObject.SetActive(false);
+
             isDipping = true;
             holdTime = 0f;
             pointsThisDip = 0f;
@@ -105,6 +110,7 @@ public class BiscuitDipper : MonoBehaviour
     }
     public void DipBiscuit()
     {
+        AudioManager.Instance.Play("Dip");
         holdTime += Time.deltaTime;
 
         float biscuitScoreMult = currentBiscuit.scoreMultiplier;
@@ -121,6 +127,7 @@ public class BiscuitDipper : MonoBehaviour
 
         if (currentIntegrity <= 0)
         {
+            AudioManager.Instance.Play("Break");
             flashRed.Flash();
             Refresh();
         }

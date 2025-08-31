@@ -17,7 +17,11 @@ public class DrinkButtons : MonoBehaviour
         {
             int drinkIndex = i;
             Button btn = transform.GetChild(i).GetComponent<Button>();
-            btn.onClick.AddListener(() => dm.UnlockDrink(drinkIndex));
+            btn.onClick.AddListener(() =>
+            {
+                dm.UnlockDrink(drinkIndex);
+                AudioManager.Instance.Play("Click");
+            });
         }
     }
 }

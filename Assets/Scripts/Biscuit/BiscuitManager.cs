@@ -32,6 +32,7 @@ public class BiscuitManager : MonoBehaviour
 
         if (!b.unlocked && scoreManager.crumbs >= b.price)
         {
+            AudioManager.Instance.Play("Positive");
             scoreManager.crumbs -= b.price;
             b.unlocked = true;
             currentBiscuit = b;
@@ -43,6 +44,7 @@ public class BiscuitManager : MonoBehaviour
             return true;
         }
 
+        AudioManager.Instance.Play("Negative");
         Debug.Log("You don't have enough crumbs");
         return false;
     }

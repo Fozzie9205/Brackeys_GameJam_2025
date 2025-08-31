@@ -17,7 +17,11 @@ public class BiscuitButtons : MonoBehaviour
         {
             int biscuitIndex = i;
             Button btn = transform.GetChild(i).GetComponent<Button>();
-            btn.onClick.AddListener(() => bm.UnlockBiscuit(biscuitIndex));
+            btn.onClick.AddListener(() =>
+            {
+                bm.UnlockBiscuit(biscuitIndex);
+                AudioManager.Instance.Play("Click");
+            });
         }
     }
 }

@@ -7,6 +7,7 @@ public class Win : MonoBehaviour
 {
     public void WinScreen()
     {
+        AudioManager.Instance.Play("Positive");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

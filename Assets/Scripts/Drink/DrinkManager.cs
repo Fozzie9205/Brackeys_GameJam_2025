@@ -33,6 +33,7 @@ public class DrinkManager : MonoBehaviour
 
         if (!d.unlocked && scoreManager.crumbs >= d.price)
         {
+            AudioManager.Instance.Play("Positive");
             scoreManager.crumbs -= d.price;
             d.unlocked = true;
             currentDrink = d;
@@ -44,6 +45,7 @@ public class DrinkManager : MonoBehaviour
             return true;
         }
 
+        AudioManager.Instance.Play("Negative");
         Debug.Log("You don't have enough crumbs");
         return false;
     }
