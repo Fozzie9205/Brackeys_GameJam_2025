@@ -35,6 +35,9 @@ public class BiscuitDipper : MonoBehaviour
     private Vector3 startPosition;
     private Vector3 targetPosition;
 
+    [Header("Drink Dip Points")]
+    public Transform[] drinkDipPoints;
+    private Drink lastDrink;
     private void Awake()
     {
         bm = FindFirstObjectByType<BiscuitManager>();
@@ -52,6 +55,18 @@ public class BiscuitDipper : MonoBehaviour
     {
         currentBiscuit = bm.currentBiscuit;
         currentDrink = dm.currentDrink;
+
+        if (currentDrink != lastDrink)
+        {
+            int currentIndex = System.Array.IndexOf(dm.drinks, currentDrink);
+            if (currentIndex >= 0 && currentIndex < drinkDipPoints.Length)
+            {
+                startPosition = drinkDipPoints[currentIndex].localPosition;
+                targetPosition = startPosition;
+            }
+
+            lastDrink = currentDrink;
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -80,6 +95,14 @@ public class BiscuitDipper : MonoBehaviour
         Debug.Log(currentIntegrity);
     }
 
+    private void UpdateBiscuitPosition(int i)
+    {
+        Drink d = dm.drinks[i]; // however you're tracking current drink index
+        if (i >= 0 && i < drinkDipPoints.Length)
+        {
+            startPosition = drinkDipPoints[i].localPosition;
+        }
+    }
     public void DipBiscuit()
     {
         holdTime += Time.deltaTime;
