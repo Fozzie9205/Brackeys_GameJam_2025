@@ -10,14 +10,13 @@ public class BiscuitDipper : MonoBehaviour
     private BiscuitManager bm;
     private DrinkManager dm;
     private Win win;
+    private FlashRed flashRed;
 
     public Biscuit currentBiscuit;
     public Drink currentDrink;
 
     private float holdTime;
     private float pointsThisDip;
-
-    private BiscuitAnimationHandler biscuitAnimHandler;
 
     [Header("Integrity")]
     public float baseIntegrity = 10f; //This is the base integrity of all biscuits
@@ -43,6 +42,7 @@ public class BiscuitDipper : MonoBehaviour
         bm = FindFirstObjectByType<BiscuitManager>();
         dm = FindFirstObjectByType<DrinkManager>();
         scoreManager = FindFirstObjectByType<ScoreManager>();
+        flashRed = GetComponent<FlashRed>();
 
         biscuit = gameObject.transform;
     }
@@ -121,7 +121,7 @@ public class BiscuitDipper : MonoBehaviour
 
         if (currentIntegrity <= 0)
         {
-            Debug.Log("Biscuit broke");
+            flashRed.Flash();
             Refresh();
         }
     }
@@ -140,7 +140,6 @@ public class BiscuitDipper : MonoBehaviour
         holdTime = 0f;
         pointsThisDip = 0;
         currentIntegrity = baseIntegrity * currentBiscuit.integrityMultiplier;
-
         targetPosition = startPosition;
     }
 }
